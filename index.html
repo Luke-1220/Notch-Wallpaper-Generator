@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>Notch Wallpaper Generator (β)</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="cropper.css">
+    <script src="cropper.js"></script>
+  </head>
+  <body>
+
+    <div id="outer">
+    <div id="header"><div id="head-inner"><h1>Notch Wallpaper Generator (β)</h1>
+    <p class="description">ノッチ隠し壁紙、ノッチ風壁紙ジェネレーター</p></div>
+    </div>
+
+    <div id="contents">
+    <h2>1. Select Size</h2>
+    <form id="size">
+      <h3>ノッチ隠し壁紙 Hide Notch Wallpaper for Notch(iPhone X~)</h3>
+      <table border="1">
+        <tr>
+          <th>Size</th>
+          <th>Resolution</th>
+          <th>Devices</th>
+        </tr>
+        <tr>
+          <td><label><input type="radio" name="trigger" value="nn_ss" disabled>5.4 Inch</label></td>
+          <td>1170×2532</td>
+          <td>12 Mini</td>
+        </tr>
+        <tr>
+          <td><label><input type="radio" name="trigger" value="nn_s" checked="checked">5.8 Inch</label></td>
+          <td>1125×2436</td>
+          <td>X / XS / 11 Pro</td>
+        </tr>
+        <tr>
+          <td><label><input type="radio" name="trigger" value="nn_m">6.1 Inch</label></td>
+          <td>828×1792</td>
+          <td>XR / 11</td>
+        </tr>
+        <tr>
+          <td><label><input type="radio" name="trigger" value="nn_mn" disabled>6.1 Inch(New)</label></td>
+          <td>1170×2532</td>
+          <td>12 / 12 Pro</td>
+        </tr>
+        <tr>
+          <td><label><input type="radio" name="trigger" value="nn_l">6.7 Inch</label></td>
+          <td>1242×2688</td>
+          <td>XS Max / 11 Pro Max</td>
+        </tr>
+        <tr>
+          <td><label><input type="radio" name="trigger" value="nn_ln" disabled>6.7 Inch(New)</label></td>
+          <td>1284×2778</td>
+          <td>12 Pro Max</td>
+        </tr>
+      </table>
+    </form>
+
+    <h3>ノッチ風壁紙 Notch Style Wallpaper for No Notch(~iPhone 8)</h3>
+    <table border="1">
+      <tr>
+        <th>Size</th>
+        <th>Resolution</th>
+        <th>Devices</th>
+      </tr>
+      <tr>
+        <td><label><input type="radio" name="trigger" value="n_s" disabled>4.0 Inch</label></td>
+        <td>640×1136</td>
+        <td>5 / 5s / 5c / SE(1st Gen)</td>
+      </tr>
+      <tr>
+        <td><label><input type="radio" name="trigger" value="n_m" disabled>4.7 Inch</label></td>
+        <td>750×1334</td>
+        <td>6 / 6s / 7 / 8 / SE(2nd Gen)</td>
+      </tr>
+      <tr>
+        <td><label><input type="radio" name="trigger" value="n_l" disabled>5.5 Inch</label></td>
+        <td>1080×1920</td>
+        <td>6 Plus / 6s Plus / 7 Plus / 8 Plus</td>
+      </tr>
+    </table>
+
+    <h2>2. Select Image</h2>
+    <form>
+      <div class="btnWrap">
+      <input id="select" type="file" accept='image/*'>
+      </div><br>
+    </form>
+
+    <h2>3. Crop Image</h2>
+    <form>
+      <div class="cropper-area">
+        <img id="cropper-img" style="max-width:500px;">
+      </div>
+      <br>
+    </form>
+    <br><div class="btnWrap">
+      <a id="generatebutton" style="cursor: pointer; user-select:none;" class="btn" disabled>Generate</a>
+    </div><br>
+
+    <h2>Result</h2>
+    <br>
+    <div class="btnWrap">
+      <canvas id="result" style="max-width:200px;"></canvas>
+    </div>
+    <span id="pixel" style="color: #a9a9a9;"></span>
+    <br>
+    <p>iPhone、iPadなどの端末では、ダウンロードボタンを押した後、画像を長押しして保存してください。</p>
+    <br>
+    <div class="btnWrap">
+      <a id="downloadbutton" style="cursor: pointer; user-select:none;" class="btn" disabled>Download</a>
+    </div>
+    <br>
+
+    <div id="middle">
+    <div class="side-title">Tips</div>
+    <div class="side">
+    <ul>
+    <li>壁紙を設定する時は、視差効果:オフを選択してください。</li>
+    <li>明るい色の画像を設定すると、ステータスバーが灰色になって目立たなくなります。</li>
+    <li>壁紙は画面の解像度に合わせて生成しています。</li>
+    <li>画像の切り抜きには<a href="https://github.com/fengyuanchen/cropperjs">Cropper.js</a>を使用しています。</li>
+    </ul>
+    </div>
+    </div>
+    <div id="footer">© 2020 Fusion</div>
+    </div>
+
+  </body>
+</html>
